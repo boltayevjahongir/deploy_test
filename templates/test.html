@@ -12,9 +12,9 @@
     <button type="submit">Upload</button>
 </form>
 <ul>
-    {%for file in data %}
-        <li><a href="{{ file.file.url }}">{{ file.file.name }}c</a></li>
-    {% endfor %}
+        {%for file in data %}
+            <li><a href="{{ file.file.url }}">{{ file.file.name }}c</a></li>
+        {% endfor %}
 </ul>
 </body>
 </html>
