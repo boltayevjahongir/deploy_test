@@ -80,10 +80,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'testdb',
-        'HOST': '0.0.0.0',
+        'HOST': '127.1.0.0',
         'PORT': '5432',
-        'USER': 'goodreadsuser',
-        'PASSWORD': 'goodreadspassword'
+        'USER': 'postgres',
+        'PASSWORD': '19030496'
     }
 }
 
@@ -118,14 +118,17 @@ USE_I18N = True
 
 USE_TZ = True
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'medias')
-# URL that handles the media served from MEDIA_ROOT, used for managing stored files.
-MEDIA_URL = '/medias/'
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.0/howto/static-files/
+MEDIA_URL = "/media/"
+MEDIA_ROOT = "media-files"
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/4.0/howto/static-files/
+
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
+STATIC_ROOT = 'static-files'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
